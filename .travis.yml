@@ -7,4 +7,4 @@ install:
   - pip install pushbullet.py requests
 
 script:
-  - ./free-ninety-nine
+  - ./free-ninety-nine.py
