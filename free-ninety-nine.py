@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import os
 import re
 import requests
@@ -26,7 +25,7 @@ for link in website.find_all('a', {'href': re.compile(r'com\/app')}):
   STEAM_GAMES=print(link['href'])
 
 # print urls
-print(STEAM_GAMES)
+STEAM_GAMES
 
 # Create Pushbullet note
 #if STEAM_GAMES == None:
