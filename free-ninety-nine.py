@@ -20,12 +20,15 @@ website = requests.get('https://steamdb.info/sales/?min_discount=95&min_rating=0
 # configure beautifulsoup
 website = soup(website.text, 'html.parser')
 
+# instantiate empty list that will store urls
+STEAM_GAMES = []
+
 # read website using beautiful soup and find the game urls
 for link in website.find_all('a', {'href': re.compile(r'com\/app')}):
-  STEAM_GAMES=print(link['href'])
+  STEAM_GAMES.append(link['href'])
 
-# print urls
-STEAM_GAMES
+# print URLs
+print(STEAM_GAMES)
 
 # Create Pushbullet note
 #if STEAM_GAMES == None:
