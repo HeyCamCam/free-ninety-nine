@@ -30,8 +30,8 @@ for link in website.find_all('a', {'href': re.compile(r'com\/app')}):
 # print URLs
 print(STEAM_GAMES)
 
-# Create Pushbullet note
+# Create Pushbullet note if free games are available
 if not STEAM_GAMES:
-  pb.push_note("SteamDB", "There are currently 0 free Steam games")
+  print("There are currently 0 free Steam games")
 else:
   pb.push_note("SteamDB", "The following games are free " + str(STEAM_GAMES))
