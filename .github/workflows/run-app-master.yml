@@ -3,8 +3,9 @@ on:
   schedule:
     # Every day at midnight, converted from UTC
     - cron: "0 5 * * *"
-    branches:
-      - main
+  branches:
+    - master
+
 jobs:
   Run-App:
     name: Run Free-Ninety-Nine
