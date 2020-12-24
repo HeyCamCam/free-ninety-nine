@@ -3,8 +3,6 @@ on:
   schedule:
     # Every day at midnight, converted from UTC
     - cron: "0 5 * * *"
-  branches:
-    - master
 
 jobs:
   Run-App:
@@ -13,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          ref: master
       - name: Set up Python
         uses: actions/setup-python@master
         with:
