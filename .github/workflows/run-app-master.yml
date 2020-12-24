@@ -1,0 +1,22 @@
+name: Run-Application
+on:
+  schedule:
+    # Every day at midnight, converted from UTC
+    - cron: "0 5 * * *"
+    branches:
+      - main
+jobs:
+  Run-App:
+    name: Run Free-Ninety-Nine
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.7
+      - name: Running Free-Ninety-Nine
+        run: |
+          pip3 install -r requirements.txt --user
+          ./free-ninety-nine.py
